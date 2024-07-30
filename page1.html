@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моё резюме</title>
+    <script>
+        window.addEventListener('load', function() {
+            const specDetails = document.querySelectorAll(`.spec-details`);
+            Array.from(specDetails).forEach((el, index)=>{
+                el.style.display = 'none';
+            })
+        });
+    </script>
+    <style>
+        body {
+            background-color: rgb(47, 33, 56);
+        }
+        header {
+            display:flex
+        }
+        .menu {
+			flex-grow: 1;
+		}
+		#menu-btn {
+			background: none;
+			border: none;
+			border-radius: none;
+			height: 30px;
+			width: 30px;
+			border-radius:6px;
+		}
+		#menu-btn img {
+			padding:0.6em;
+			transition:all 500ms cubic-bezier(.25,.1,1,-0.34) 0ms;
+			border-radius:6px;
+			position: relative;
+		}
+		#menu-btn:hover img {
+			background: #000;
+			
+		}
+		.menu-pp {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: none;
+			background-color: antiquewhite;
+			position: absolute;
+		}
+		.menu-pp>li {
+			color: #333;
+			padding: 1em 1.5em;
+
+		}
+		.menu-pp>li:hover {
+			background-color: aquamarine;
+		}
+		#menu-btn:hover .menu-pp {
+			display: block;
+		}
+		main {
+			display:flex;
+			gap: 20px;
+		}
+        
+        @keyframes appearance {
+            0% {
+                filter: opacity(0);
+            }
+            99% {
+                opacity: 1;
+            }
+            to {
+                display: none;
+            }
+        }
+
+        @keyframes fade {
+            0% {
+                filter: opacity(1);
+            }
+            99% {
+                opacity: 0;
+            }
+            to {
+                display: none;
+            }
+        }
+
+        .spec-details {
+            list-style: none;
+            padding: 0;
+			margin: 15px;
+			/* display: none; */
+			background-color: none;
+			position: absolute;
+        }
+        .spec:hover ul {
+            animation-name: appearance;
+            animation-duration: 1s;
+        }
+        .spec:not(:hover) ul {
+            animation-name: fade;
+            animation-duration: 1s;
+        }
+
+        .spec-s {
+            background-color: #b4b4b4;
+            padding: 0.5em;
+            border-radius: 1em;
+        }
+        .spec-s:hover .spec-imS {
+            display: block;
+            background-color: #000;
+        }
+        .spec-p:hover .spec-imP {
+            display: block;
+            background-color: #000;
+        }
+        .spec-e:hover .spec-imE {
+            display: block;
+            background-color: #000;
+        }
+        .spec-c:hover .spec-imC {
+            display: block;
+            background-color: #000;
+        }
+        .spec-p {
+            background-color: #b4b4b4;
+            padding: 0.5em;
+            border-radius: 1em;
+        }
+        .spec-e {
+            background-color: #b4b4b4;
+            padding: 0.5em;
+            border-radius: 1em;
+        }
+        .spec-c {
+            background-color: #b4b4b4;
+            padding: 0.5em;
+            border-radius: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+		<div class="menu">
+			<button id="menu-btn">
+				<img src="./Link/icons8-menu.svg" alt="">
+				<ul class="menu-pp"> 
+					<li><a href="./index.html">Home</a></li>
+					<li>item 2</li>
+					<li>item 3</li>
+					<li>item 4</li>
+					<li>item 5</li>
+				</ul>
+	</header> 
+    <main>
+        <div class="spec spec-s">
+            <h2>
+                S.P.E.C.
+            </h2>
+            <div>
+                spec atributes S
+                Strange = 5
+            </div>
+            <ul class="spec-details spec-imS">
+                <li><img src="./Link/spec-s.png" alt=""></li>
+            </ul>
+        </div>
+        <div class="spec spec-p">
+            <h2>
+                S.P.E.C.
+            </h2>
+            <div>
+                spec atributes P
+                Perception = 2
+            </div>
+            <ul class="spec-details spec-imP">
+                <li><img src="./Link/spec-p.png" alt=""></li>
+            </ul>
+        </div>
+        <div class="spec spec-e">
+            <h2>
+                S.P.E.C.
+            </h2>
+            <div>
+                spec atributes E
+                Endurance = 3
+            </div>
+            <ul class="spec-details spec-imE">
+                <li><img src="./Link/spec-e.png" alt=""></li>
+            </ul>
+        </div>
+        <div class="spec spec-c">
+            <h2>
+                S.P.E.C.
+            </h2>
+            <div>
+                spec atributes C
+                Charisma = 1
+            </div>
+            <ul class="spec-details spec-imC">
+                <li><img src="./Link/spec-c.png" alt=""></li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
